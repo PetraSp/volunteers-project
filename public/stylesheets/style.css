@@ -162,7 +162,6 @@ top:70px;
 }
 
 .form-group {
-	border-top: 1px solid #e1e1e1;
 	margin-top: 1em;
 /*	padding: 1em;*/
 }
@@ -185,7 +184,17 @@ font-weight: normal;
 	font-weight: normal;
 }
 
-.form .form__input .form__input--checkbox{}
+.form .column-wrapper {
+	display: block;
+	width: 100%;
+}
+
+.form .column2 {
+	width: 48%;
+	display: inline-block;
+}
+
+.form__input--checkbox + .form__label { display: inline-block; }
 
 .form__title {
 	margin-top: 0;
@@ -263,15 +272,18 @@ font-weight: normal;
 
 /* LIB STYLES */
 
-.iti-flag,
-.country-select .flag {
+.iti-flag {
 	background-image: url("../images/flags.png");
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .iti-flag,
-  .country-select .flag {
+  .iti-flag {
   	background-image: url("../images/flags@2x.png");
   }
+}
+
+
+.country-select .flag {
+	background-image: url("../images/flags-2.png");
 }
 
 .country-select{
