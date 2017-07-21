@@ -1,7 +1,7 @@
 <% if(user.role === "user"){ %>
 
 <form action="/editProfileUser" method="POST" onSubmit="return validateForm();" class='form form--edit-user'>
-  <h4 class="form__title">Create a volunteer account</h4>
+  <h4 class="form__title">Update your volunteer account</h4>
   
   <label for='age' class="form__label">
     <span>Age</span>
@@ -34,14 +34,14 @@
   </label>
   <textarea id='bio' class="form__textarea" name='bio'></textarea>
   
-  <section>
-    <h6>Upload your photo</h6>
+  <!-- <section class="upload-photo"> -->
+    <div class="upload-photo">Upload your photo</div>
     <form action="/upload" method="post" enctype="multipart/form-data">
-      <input type="text" name="name">
-      <input type="file" name="photo">
-      <input type="submit" value="Save">
+    <div class="upload-photo choose-file"><input type="text" name="name"></div>
+     <div class="upload-photo"><input type="file" name="photo" ></div>
+    <input type="submit" value="Save">
     </form>
-  </section>
+  <!-- </section> -->
 
   <!-- <div class="form-group">
     <label class="label">
@@ -82,7 +82,7 @@
       <label for='activity-5' class="form__label">Help out with making phone calls, writting letters</label>
     </div>
   </section>
-  <p class="agree">By clicking the button below, you agree to the Elder Helpers</p>
+  <!-- <p class="agree">By clicking the button below, you agree to the Elder Helpers</p> -->
 
   <button class="button" type="submit">Volunteer!</button>
   
@@ -118,8 +118,8 @@
   </label>
   <textarea id='needs' class="form__textarea" name='needs'></textarea>
 
-  <p class="agree">By clicking the button below, you agree to the Elder Helpers</p>
-  <button type="submit">Sign up</button>
+  <!-- <p class="agree">By clicking the button below, you agree to the Elder Helpers</p> -->
+  <div></div><button type="submit">Submit</button></div>
 </form>
 
 <% } %>
@@ -139,6 +139,7 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7vXyvsKLbTZp0OXfVs3cF_b1kG32LwXc&libraries=places">
     </script>
     <script type="text/javascript" src="autocomplete.js"></script>
+     <!-- <script type="text/javascript" src="addressComplete.js"></script> -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
   $("#profileImage").click(function(e) {

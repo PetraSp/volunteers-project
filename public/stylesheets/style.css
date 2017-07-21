@@ -1,5 +1,6 @@
 html body {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	background-color: #e6cae0;
 }
 
 #file{
@@ -17,20 +18,28 @@ html body {
 
 .main {
 	padding-top: 10px;
+	margin-bottom: 80px;
 }
 
 .footer {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-	/* Set the fixed height of the footer here */q
+	/* Set the fixed height of the footer here */
 	height: 60px;
-	background-color: #f5f5f5;
+	background-color: #f9fde4;
+}
+
+.navbar-container {
+	background-color: #f9fde4;
+	padding-left: 30px;
+	padding-right: 30px;
 }
 
 .footer > .container {
 	padding-right: 15px;
 	padding-left: 15px;
+
 }
 
 .container .text-muted {
@@ -53,61 +62,47 @@ html body {
 	margin-top: 70px;
 }
 
-.social-media {
-	background: #67BCDB;
-	color: #fafafa;
-	display: block;
-	height: auto;
-	min-height: 50px;
-	overflow: hidden;
-	text-align: center;
-	width: 100%;
+.upload-photo {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
 }
 
-.social-media ul {
-	clear: left;
-	float: left;
-	left: 50%;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	position: relative;
-	text-align: center;
+.upload-photo .choose-file {
+	margin-top: 0;
 }
 
-.social-media li {
-	display: block;
-	float: left;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	position: relative;
-	right: 50%;
+ .choose-file {
+	margin-top: 20px
+	margin-bottom: 20px;
 }
 
-.social-media ul li img {
-	margin: 20px;
+.hands-img {
+position:absolute;
+right: 60px;
+top:70px;
 }
 
-.copyright {
+.join {
+	margin-top:  40px;
+	margin-left: 20px;
+	padding: 10px;
+	border: 2px solid #be8aae;
+	width: 150px;
+}
+
+/*.copyright {
 	font-size: 15px;
 	font-style: italic;
 	margin: 50px 0 0 0;
 	text-align: center;
 	width: 100%;
-}
+}*/
 
 .hidden {
 	visibility: none;
 }
 
 
-#map {
-	height: 400px;
-	width: 400px;
-/*	height: 500px;
-	width: 100%;*/
-}
 
 #map {
 	height: 400px;
@@ -138,10 +133,10 @@ html body {
 }
 
 
-#imageUpload
+/*#imageUpload
 {
     display: none;
-}
+}*/
 
 #profileImage
 {
@@ -165,7 +160,7 @@ html body {
 .form-group {
 	border-top: 1px solid #e1e1e1;
 	margin-top: 1em;
-	padding: 1em;
+/*	padding: 1em;*/
 }
 
 .form .checkbox-group .form__label {
@@ -183,6 +178,7 @@ font-weight: normal;
 
 .form .form__input {
 	min-width: 210px;
+	font-weight: normal;
 }
 
 .form .form__input .form__input--checkbox{}
