@@ -21,6 +21,10 @@ html body {
 	margin-bottom: 80px;
 }
 
+.listing {
+	color: #f9fde4
+}
+
 .footer {
 	position: fixed;
 	bottom: 0;

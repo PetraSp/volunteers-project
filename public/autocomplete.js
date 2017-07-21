@@ -5,7 +5,7 @@ function init(){
 }
 
 $("#addres").change(function(){
- getCoordinates()
+ setTimeout(getCoordinates,100)
 })
 
 
