@@ -80,15 +80,11 @@ html body {
 	margin-bottom: 20px;
 }
 
-.hands-img {
-position:absolute;
-right: 60px;
-top:70px;
-}
+
 
 .join {
-	margin-top:  40px;
-	margin-left: 20px;
+	margin-top:  300px;
+	position: relative;
 	padding: 10px;
 	border: 2px solid #be8aae;
 	width: 150px;
@@ -105,7 +101,82 @@ top:70px;
 .hidden {
 	visibility: none;
 }
+.btn {
+	border: solid;
+	border-radius: 5px;
+	border-color: #4B2D73;
+	height: 30px;
+	width: 200px;
+	text-align: center;
+	padding-bottom: 25px;
+}
 
+.feathers {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 1;
+
+}
+
+.feathers::after {
+	content: " ";
+  background-image: url("../images/feathers.png");
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.pink-back {
+	position: absolute;
+	height: 800px;
+	width: 1500px;
+	margin-left: -180px;
+	margin-top: -30px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 0.4;
+
+}
+
+.pink-back {
+	content: " ";
+  background-color: #E6CAE0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+.hands {
+	height: inherit;
+	width: inherit;
+
+}
+.hands-img {
+	display: block;
+	background: no- repeat center center;
+	height: 300px;
+	width: 800px;
+	position: relative;
+	margin-left: 500px;
+	margin-top: -300px;
+	border: solid;
+	border-color: #E2D1DE;
+	border-radius: 5px;
+	opacity: 0.7;
+	background: ;
+
+
+}
 
 
 #map {
@@ -1150,5 +1221,3 @@ font-weight: normal;
 .country-select .ch{
 	background-position:-208px -143px
 }
-
-
