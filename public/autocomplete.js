@@ -1,11 +1,14 @@
+
 function init(){
   var input = document.getElementById("addres");
   var autocomplete = new google.maps.places.Autocomplete(input);
 }
 
 $("#addres").change(function(){
- getCoordinates();
+
+ setTimeout(getCoordinates,100);
 });
+
 
 
 function getCoordinates(){

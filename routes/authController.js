@@ -15,7 +15,11 @@ router.get('/signup', function(req, res, next) {
 router.post("/signup", (req, res, next) => {
   var username = req.body.username;
   var password = req.body.password;
-  var role     =  req.body.user;
+
+  var role = req.body.user;
+  var lat = req.body.lat;
+  var lng = req.body.lng;
+
 
   console.log('user -> ', req.body);
   if (username === "" || password === "") {
@@ -48,9 +52,14 @@ router.post("/signup", (req, res, next) => {
 
     newUser.save((err) => {
       if (err) {
+<<<<<<< HEAD
 
         console.log('error', err);
         req.flash('error', 'Problem creating an User' );
+=======
+        console.log('error', err)
+        req.flash('error', 'Problem creating a User' );
+>>>>>>> master
         res.redirect("/signup");
       } else {
 
