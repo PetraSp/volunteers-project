@@ -1,6 +1,7 @@
 html body {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	background-color: #e6cae0;
+	/*color: #a02f4c;*/
 }
 
 #file{
@@ -94,19 +95,24 @@ top:70px;
 	width: 150px;
 }
 
-/*.copyright {
-	font-size: 15px;
-	font-style: italic;
-	margin: 50px 0 0 0;
-	text-align: center;
-	width: 100%;
-}*/
-
 .hidden {
 	visibility: none;
 }
 
+.see-volunteers {
+	margin-top: 20px;
+	font-size: 20px;
+}
 
+.where-we-work {
+	margin-top: 40px;
+	font-size: 20px;
+}
+
+.edit-your-profile {
+	margin-top: 20px;
+	font-size: 20px;
+}
 
 #map {
 	height: 400px;
@@ -182,6 +188,10 @@ font-weight: normal;
 .form .form__input {
 	min-width: 210px;
 	font-weight: normal;
+}
+
+#needs {
+	min-width: 210px;
 }
 
 .form .column-wrapper {
