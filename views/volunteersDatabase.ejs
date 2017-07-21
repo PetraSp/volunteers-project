@@ -7,14 +7,16 @@
     users.forEach(function(user){ %>
     <% if(user.role === "user"){ %>
       <div class="profile">
+      <div class="pic-box"><%= user.img %> </div>
       <p><b>Username:</b> <%= user.username %> </p>
       <p><b>Fullname:</b> <%= user.fullname %> </p>
       <p><b>Age:</b> <%= user.age %> </p>
       <p><b>Availability:</b> <%= user.availability %> </p>
       <p><b>email:</b> <%= user.email %> </p>
       <p><b>Phone:</b> <%= user.phone %> </p>
-      <div class="pic-box"><%= user.img %> </div>
+
       </div>
+
       <%}%>
     <%})%>
   <body>

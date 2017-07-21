@@ -141,6 +141,29 @@ html body {
   position: absolute;
   z-index: -1;
 }
+
+.profile {
+	height: 400px;
+	width: 300px;
+	float:left;
+	border-style: solid;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	padding: 15px;
+}
+
+.profile::after{
+	content:""
+	background-color:  #C94C4C;
+	opacity: 0.2;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1;
+}
+
 .copy-div{
 	position: relative;
 	margin-top: 400px;
@@ -268,27 +291,7 @@ font-weight: normal;
 	width: 50px;
 }
 
-.profile {
-	height: 400px;
-	width: 300px;
-	float:left;
-	border-style: solid;
-	margin-bottom: 10px;
-	margin-right: 10px;
-	padding: 15px;
-}
 
-.profile::after{
-	content:""
-	background-color:  #C94C4C;
-	opacity: 0.2;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	position: absolute;
-	z-index: -1;
-}
 /* INPUT FILE */
 /*input[type=file] {
   outline: 0;
