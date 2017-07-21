@@ -1,7 +1,6 @@
 html body {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	background-color: #e6cae0;
-	/*color: #a02f4c;*/
 }
 
 #file{
@@ -57,6 +56,35 @@ html body {
 	margin: 0 auto;
 }
 
+.background-img {
+	position: absolute;
+	width: 100%;
+	height: 700px;
+
+}
+
+.content-main {
+	margin-left: 50px;
+
+}
+.bck-image {
+	position: absolute;
+	height: 800px;
+	width: 100%;
+
+}
+.bck-image::after {
+  content: "";
+  background: url('../images/elderly.jpg');
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
 .signup1 {
 	width: 380px;
 	padding-top: 50px;
@@ -81,11 +109,11 @@ html body {
 	margin-bottom: 20px;
 }
 
-.hands-img {
+/*.hands-img {
 position:absolute;
 right: 60px;
 top:70px;
-}
+}*/
 
 .join {
 	margin-top:  40px;
@@ -93,6 +121,91 @@ top:70px;
 	padding: 10px;
 	border: 2px solid #be8aae;
 	width: 150px;
+}
+
+
+.secret-div {
+	height: 100%;
+	width: 400px;
+	background: url('../images/elderly.jpg');
+	opacity: 0.7;
+}
+
+.btn {
+	border: solid;
+	border-radius: 5px;
+	border-color: #4B2D73;
+	height: 30px;
+	width: 200px;
+	text-align: center;
+	padding-bottom: 25px;
+}
+
+.feathers {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 1;
+
+}
+
+.feathers::after {
+	content: " ";
+  background-image: url("../images/feathers.png");
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.pink-back {
+	position: absolute;
+	height: 800px;
+	width: 1500px;
+	margin-left: -180px;
+	margin-top: -30px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 0.4;
+
+
+}
+
+.pink-back {
+	content: " ";
+  background-color: #E6CAE0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.hands {
+	height: inherit;
+	width: inherit;
+}
+
+.hands-img {
+	display: block;
+	background: no- repeat center center;
+	height: 300px;
+	width: 800px;
+	position: relative;
+	margin-left: 500px;
+	margin-top: -300px;
+	border: solid;
+	border-color: #E2D1DE;
+	border-radius: 5px;
+	opacity: 0.7;
+	background: ;
 }
 
 .hidden {
