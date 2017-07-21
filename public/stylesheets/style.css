@@ -71,19 +71,8 @@ html body {
 	position: absolute;
 	height: 800px;
 	width: 100%;
+}
 
-}
-.bck-image::after {
-  content: "";
-  background: url('../images/elderly.jpg');
-  opacity: 0.5;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-}
 
 .signup1 {
 	width: 380px;
@@ -116,8 +105,7 @@ top:70px;
 }*/
 
 .join {
-	margin-top:  40px;
-	margin-left: 20px;
+	margin-top:  250px;
 	padding: 10px;
 	border: 2px solid #be8aae;
 	width: 150px;
@@ -131,6 +119,7 @@ top:70px;
 	opacity: 0.7;
 }
 
+
 .btn {
 	border: solid;
 	border-radius: 5px;
@@ -139,6 +128,7 @@ top:70px;
 	width: 200px;
 	text-align: center;
 	padding-bottom: 25px;
+	margin-top: 10px;
 }
 
 .feathers {
@@ -153,7 +143,7 @@ top:70px;
 
 .feathers::after {
 	content: " ";
-  background-image: url("../images/feathers.png");
+  background-image: url("../images/feathers.");
   top: 0;
   left: 0;
   bottom: 0;
@@ -172,7 +162,7 @@ top:70px;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	opacity: 0.4;
+	opacity: 0.8;
 
 
 }
@@ -199,7 +189,7 @@ top:70px;
 	height: 300px;
 	width: 800px;
 	position: relative;
-	margin-left: 500px;
+	margin-left: 275px;
 	margin-top: -300px;
 	border: solid;
 	border-color: #E2D1DE;
@@ -308,12 +298,17 @@ font-weight: normal;
 }
 
 .form .column-wrapper {
-	display: block;
 	width: 100%;
+	display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: flex-start;
 }
 
 .form .column2 {
-	width: 48%;
+	width: 30%;
 	display: inline-block;
 }
 
@@ -331,14 +326,10 @@ font-weight: normal;
 }
 
 .profile {
-	height: 300px;
-	width: 300px;
-	float:left;
-	border-color: red;
-	border-style: solid;
-	margin-bottom: 10px;
-	margin-right: 10px;
-	padding: 15px;
+	margin-top: 20px;
+	position: relative;
+	height: 200px;
+	border-bottom: solid 2px;
 }
 /* INPUT FILE */
 /*input[type=file] {
