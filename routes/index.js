@@ -27,34 +27,14 @@ router.post("/editProfileUser", (req, res, next) => {
   // var userId = req.user
   console.log("inside post", req.user._id)
   var userId = req.user._id;
-  var age = req.user.age;
-  var country = req.user.country;
-  var phone = req.user.phone;
-  var occupation = req.user.occupation;
-  var bio = req.user.bio;
-  var av = req.user.mon;
-  var av = req.user.tue;
-  var av = req.user.wed;
-  var av = req.user.thu;
-  var av = req.user.fri;
-  var av = req.user.sat;
-  var av = req.user.sun;
-  var avTimes = req.user.mornings;
-  var avTimes = req.user.afternoons;
-  var avTimes = req.user.evenings;
-  var activity = req.user.activity0;
-  var activity = req.user.activity1;
-  var activity = req.user.activity2;
-  var activity = req.user.activity3;
-  var activity = req.user.activity4;
-  var activity = req.user.activity5;
+
  
   let location = {
     type: 'Point',
     coordinates: [0, 0]
   };
 
-  var update = {
+  let update = {
     age: req.body.age,
     country: req.body.country,
     phone: req.body.phone,
