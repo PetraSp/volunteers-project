@@ -97,12 +97,7 @@
   
   
   <!-- <section class="upload-photo"> -->
-    <div class="upload-photo">Upload your photo</div>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-    <div class="upload-photo choose-file"><input type="text" name="name"></div>
-     <div class="upload-photo"><input type="file" name="photo" ></div>
-    <input type="submit" value="Save">
-    </form>
+    
   <!-- </section> -->
 
   <!-- <div class="form-group">
@@ -150,7 +145,12 @@
   
 </form>
 
-
+<div class="upload-photo">Upload your photo</div>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+    <div class="upload-photo choose-file"><input type="text" name="name"></div>
+     <div class="upload-photo"><input type="file" name="photo" ></div>
+    <input type="submit" value="Save">
+    </form>
 
 <% } else { %>  
 
@@ -161,7 +161,7 @@
   <label for='Address' class="form__label">
   <span>Address</span>
   </label>
-  <input id="addres" type="text">
+  <input id="address" type="text">
   <input id="latitude" type="text" name="latitude" placeholder="Latitude" >
   <input id="longitude" type="text" name="longitude" placeholder="Longitude">
 
@@ -201,7 +201,6 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7vXyvsKLbTZp0OXfVs3cF_b1kG32LwXc&libraries=places">
     </script>
     <script type="text/javascript" src="autocomplete.js"></script>
-     <!-- <script type="text/javascript" src="addressComplete.js"></script> -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
   $("#profileImage").click(function(e) {

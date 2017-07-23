@@ -1,10 +1,10 @@
 
 function init(){
-  var input = document.getElementById("addres")
+  var input = document.getElementById("address")
   var autocomplete = new google.maps.places.Autocomplete(input)
 }
 
-$("#addres").change(function(){
+$("#address").change(function(){
  setTimeout(getCoordinates,100)
 })
 
@@ -16,7 +16,7 @@ function getCoordinates(){
     var request = {
       location: {lat: 0, lng: 0},
       radius: "500",
-      query: $("#addres").val()
+      query: $("#address").val()
     };
 
     service.textSearch(request, function(places){

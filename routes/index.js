@@ -27,9 +27,13 @@ router.post("/editProfileUser", (req, res, next) => {
   console.log("inside post", req.user._id)
   var userId = req.user._id
 
+  // let location = {
+  //   type: 'Point',
+  //   coordinates: [req.body.longitude, req.body.latitude]
+  // };
   let location = {
     type: 'Point',
-    coordinates: [req.body.longitude, req.body.latitude]
+    coordinates: [0, 0]
   };
 
   var update = {
@@ -103,8 +107,6 @@ router.post('/upload', upload.single('photo'), function(req, res){
     }
   });
 });
-
-
 
 
 });

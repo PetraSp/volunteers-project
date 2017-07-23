@@ -1,54 +1,126 @@
-html body {
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-	background-color: #e6cae0;
+	html, body {
+	background: #e6cae0;
+	font-family: "San Francisco";
+	font-size: 16px;
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+	letter-spacing: 0.5px;
+	margin: 0;
+	height: 100%;
+	padding: 0px;
+	width: 100%;
 }
+
+/*HOME PAGE*/
+
+.sidenav {
+	background-color: #f9fde4;
+	height: 65px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 99999;
+}
+
+.sidenav ul {
+	float: right;
+  margin-top: 20px;
+/*	margin-right: 60px;*/
+}
+
+.sidenav li {
+	float: left;
+  list-style: none;
+  margin: 0 50px 0 0;
+  padding: 10px 0;
+	width: auto;
+}
+
+.h1-index {
+	letter-spacing: 1.5px;
+	font-family: "San Francisco";
+	font-size: 36px;
+  font-weight: 500;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff");
+	margin-top: 70px;
+}
+
+.h2-index {
+	letter-spacing: 1.5px;
+	font-family: "San Francisco";
+	font-size: 24px;
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+
+.h3-index {
+	letter-spacing: 1px;
+	font-family: "San Francisco";
+	font-size: 20px;
+  font-weight: 700;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
+}
+
+#content {
+	background-image: url("../images/feathers.png");
+	height: 330px;
+	margin: 120px auto;
+	max-width: 1400px;
+	min-width: 240px;
+	position: relative;
+	width: auto;
+}
+
+.hands-picture {
+position: absolute;
+right: 120px;
+top: 130px;
+}
+
+.hands-picture img {
+	border-radius: 2%;
+}
+
+.index-join {
+	font-size: 20px;
+	margin-top:  60px;
+	margin-left: 80px;
+}
+
+footer {
+background-color: #f9fde4;
+height: 65px;
+position: fixed;
+bottom: 0;
+width: 100%;
+}
+
+.footer-text {
+	padding: 20px 20px;
+}
+
+
+
 
 #file{
  width: 300px;
  height: 300px;
 }
 
-.page-wrapper {
-
-}
 
 .form .form--edit-user {
 	margin: 0 auto;
-}
-
-.main {
-	padding-top: 10px;
-	margin-bottom: 80px;
 }
 
 .listing {
 	color: #f9fde4
 }
 
-.footer {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	/* Set the fixed height of the footer here */
-	height: 60px;
-	background-color: #f9fde4;
-}
 
-.navbar-container {
-	background-color: #f9fde4;
-	padding-left: 30px;
-	padding-right: 30px;
-}
 
-.footer > .container {
-	padding-right: 15px;
-	padding-left: 15px;
 
-}
 
-.container .text-muted {
-	margin: 20px 0;
-}
 
 .login {
 	width: 380px;
@@ -80,9 +152,6 @@ html body {
 	margin: 0 auto;
 }
 
-.h1-custom {
-	margin-top: 70px;
-}
 
 .upload-photo {
 	margin-top: 1.5em;
@@ -98,18 +167,8 @@ html body {
 	margin-bottom: 20px;
 }
 
-/*.hands-img {
-position:absolute;
-right: 60px;
-top:70px;
-}*/
 
-.join {
-	margin-top:  250px;
-	padding: 10px;
-	border: 2px solid #be8aae;
-	width: 150px;
-}
+
 
 
 .secret-div {
@@ -131,72 +190,7 @@ top:70px;
 	margin-top: 10px;
 }
 
-.feathers {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	opacity: 1;
 
-}
-
-.feathers::after {
-	content: " ";
-  background-image: url("../images/feathers.");
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-}
-
-.pink-back {
-	position: absolute;
-	height: 800px;
-	width: 1500px;
-	margin-left: -180px;
-	margin-top: -30px;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	opacity: 0.8;
-
-
-}
-
-.pink-back {
-	content: " ";
-  background-color: #E6CAE0;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-}
-
-.hands {
-	height: inherit;
-	width: inherit;
-}
-
-.hands-img {
-	display: block;
-	background: no- repeat center center;
-	height: 300px;
-	width: 800px;
-	position: relative;
-	margin-left: 275px;
-	margin-top: -300px;
-	border: solid;
-	border-color: #E2D1DE;
-	border-radius: 5px;
-	opacity: 0.7;
-	background: ;
-}
 
 .hidden {
 	visibility: none;
