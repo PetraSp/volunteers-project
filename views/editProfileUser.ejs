@@ -1,4 +1,4 @@
-<% if(user.role === "user"){ %>
+<!-- <% if(user.role === "user"){ %> -->
 
 <form action="/editProfileUser" method="POST" onSubmit="return validateForm();" class='form form--edit-user'>
   <h4 class="form__title">Update your volunteer account</h4>
@@ -14,10 +14,10 @@
   <input type="text" id="country" name="country" class="form__input"/>
   
 
-  <label for='email' class="form__label">
+  <!-- <label for='email' class="form__label">
     <span>Email</span>
   </label>
-  <input type="email" id="email" name="email" class="form__input"/>
+  <input type="email" id="email" name="email" class="form__input"/> -->
 
   <label for='phone' class="form__label">
     <span>Phone</span>
@@ -27,7 +27,7 @@
   <label for='occupation' class="form__label">
     <span>Occupation</span>
   </label>
-  <input type="text" id="occupation" name="phone" class="form__input"/>
+  <input type="text" id="occupation" name="occupation" class="form__input"/>
 
   <label for='bio' class="form__label">
     <span>Mini Biography</span>
@@ -40,31 +40,31 @@
         <span>Available Days:</span>
         </label>
         <div>
-          <input type="checkbox" class="form__input form__input--checkbox" id="monday" name="monday">
+          <input type="checkbox" class="form__input form__input--checkbox" id="monday" name="mon">
           <label for='monday' class="form__label">Monday</label> 
         </div>
         <div>
-          <input type="checkbox" class="form__input form__input--checkbox" id="tuesday" name="tuesday">
+          <input type="checkbox" class="form__input form__input--checkbox" id="tuesday" name="tue">
           <label for='tuesday' class="form__label">Tuesday</label> 
         </div>    
         <div>
-          <input type="checkbox" class="form__input form__input--checkbox" id="wednesday" name="wednesday">
+          <input type="checkbox" class="form__input form__input--checkbox" id="wednesday" name="wed">
           <label for='wednesday' class="form__label">Wednesday</label>
         </div>
         <div>
-          <input type="checkbox" class="form__input form__input--checkbox" id="thursday" name="thursday">
+          <input type="checkbox" class="form__input form__input--checkbox" id="thursday" name="thu">
           <label for='thursday' class="form__label">Thursday</label>
         </div>
         <div>
-          <input type="checkbox" class="form__input form__input--checkbox" id="friday" name="friday">
+          <input type="checkbox" class="form__input form__input--checkbox" id="friday" name="fri">
           <label for='friday' class="form__label">Friday</label>
         </div>
         <div>
-          <input type="checkbox" class="form__input form__input--checkbox" id="saturday" name="saturday">
+          <input type="checkbox" class="form__input form__input--checkbox" id="saturday" name="sat">
           <label for='saturday' class="form__label">Saturday</label>
         </div>
         <div>
-          <input type="checkbox" class="form__input form__input--checkbox" id="sunday" name="sunday">
+          <input type="checkbox" class="form__input form__input--checkbox" id="sunday" name="sun">
           <label for='sunday' class="form__label">Sunday</label>
         </div>
       </div>
@@ -84,10 +84,6 @@
         <div>
           <input type="checkbox" class="form__input form__input--checkbox" id="saturday" name="evenings">
           <label for='evenings' class="form__label">Evenings</label>
-        </div>
-        <div>
-          <input type="checkbox" class="form__input form__input--checkbox" id="sunday" name="nights">
-          <label for='nights' class="form__label">Nights</label>
         </div>
       </div>
     </div>
@@ -110,32 +106,31 @@
   
 
 <!-- <button class="button" type="submit">Volunteer!</button> -->
-
+<br> 
   <section class="form-group checkbox-group">
-    <p>I am willing to</p>
-
+    <p><strong>I am willing to:</strong></p>
     <div>
-      <input type="checkbox" class="form__input form__input--checkbox" id="activity-0" name="activity-0">
+      <input type="checkbox" class="form__input form__input--checkbox" id="activity-0" name="activity0">
       <label for='activity-0' class="form__label">Help with Shopping</label> 
     </div>
     <div>
-      <input type="checkbox" class="form__input form__input--checkbox" id="activity-1" name="activity-1">
+      <input type="checkbox" class="form__input form__input--checkbox" id="activity-1" name="activity1">
       <label for='activity-1' class="form__label">Entertain: I can sing, dance, and make you laugh!</label> 
     </div>    
     <div>
-      <input type="checkbox" class="form__input form__input--checkbox" id="activity-2" name="activity-2">
+      <input type="checkbox" class="form__input form__input--checkbox" id="activity-2" name="activity2">
       <label for='activity-2' class="form__label">Reading</label>
     </div>
     <div>
-      <input type="checkbox" class="form__input form__input--checkbox" id="activity-3" name="activity-3">
+      <input type="checkbox" class="form__input form__input--checkbox" id="activity-3" name="activity3">
       <label for='activity-3' class="form__label">Help with cleaning</label>
     </div>
     <div>
-      <input type="checkbox" class="form__input form__input--checkbox" id="activity-4" name="activity-4">
+      <input type="checkbox" class="form__input form__input--checkbox" id="activity-4" name="activity4">
       <label for='activity-4' class="form__label">Help with cooking</label>
     </div>
     <div>
-      <input type="checkbox" class="form__input form__input--checkbox" id="activity-5" name="activity-5">
+      <input type="checkbox" class="form__input form__input--checkbox" id="activity-5" name="activity5">
       <label for='activity-5' class="form__label">Help out with making phone calls, writting letters</label>
     </div>
   </section>
@@ -145,14 +140,14 @@
   
 </form>
 
-<div class="upload-photo">Upload your photo</div>
+<!-- <div class="upload-photo">Upload your photo</div>
     <form action="/upload" method="post" enctype="multipart/form-data">
     <div class="upload-photo choose-file"><input type="text" name="name"></div>
      <div class="upload-photo"><input type="file" name="photo" ></div>
     <input type="submit" value="Save">
-    </form>
+    </form> -->
 
-<% } else { %>  
+<!-- <% } else { %>  
 
  <form action="/editProfileUser" method="POST" onSubmit="return validateForm();" class='form form--edit-user'>
 
@@ -181,10 +176,10 @@
   <textarea id='needs' class="form__textarea" name='needs'></textarea>
 
   <!-- <p class="agree">By clicking the button below, you agree to the Elder Helpers</p> -->
-  <div></div><button type="submit">Submit</button></div>
+<!--   <div></div><button type="submit">Submit</button></div>
 </form>
 
-<% } %>
+<% } %> --> -->
 
 <!-- input tel js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

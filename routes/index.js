@@ -18,6 +18,7 @@ router.get('/where-we-work', function(req, res, next) {
 
 router.get('/editProfileUser', function(req, res, next) {
   var user = req.user
+  var age = req.body.age
   res.render('editProfileUser',{user});
 });
 
@@ -25,12 +26,29 @@ router.get('/editProfileUser', function(req, res, next) {
 router.post("/editProfileUser", (req, res, next) => {
   // var userId = req.user
   console.log("inside post", req.user._id)
-  var userId = req.user._id
-
-  // let location = {
-  //   type: 'Point',
-  //   coordinates: [req.body.longitude, req.body.latitude]
-  // };
+  var userId = req.user._id;
+  var age = req.user.age;
+  var country = req.user.country;
+  var phone = req.user.phone;
+  var occupation = req.user.occupation;
+  var bio = req.user.bio;
+  var av = req.user.mon;
+  var av = req.user.tue;
+  var av = req.user.wed;
+  var av = req.user.thu;
+  var av = req.user.fri;
+  var av = req.user.sat;
+  var av = req.user.sun;
+  var avTimes = req.user.mornings;
+  var avTimes = req.user.afternoons;
+  var avTimes = req.user.evenings;
+  var activity = req.user.activity0;
+  var activity = req.user.activity1;
+  var activity = req.user.activity2;
+  var activity = req.user.activity3;
+  var activity = req.user.activity4;
+  var activity = req.user.activity5;
+ 
   let location = {
     type: 'Point',
     coordinates: [0, 0]
@@ -38,10 +56,30 @@ router.post("/editProfileUser", (req, res, next) => {
 
   var update = {
     age: req.body.age,
+    country: req.body.country,
+    phone: req.body.phone,
+    occupation: req.body.occupation,
+    bio: req.body.bio,
+    av: req.body.mon,
+    av: req.body.tue,
+    av: req.body.wed,
+    av: req.body.thu,
+    av: req.body.fri,
+    av: req.body.sat,
+    av: req.body.sun,
+    avTimes: req.body.mornings,
+    avTimes: req.body.afternoons,
+    avTimes: req.body.evenings,
+    activity: req.body.activity0,
+    activity: req.body.activity1,
+    activity: req.body.activity2,
+    activity: req.body.activity3,
+    activity: req.body.activity4,
+    activity: req.body.activity5,
   }
 
 
-  User.findByIdAndUpdate({ _id: userId },{location,update},{new: true} ,(err, user) => {
+  User.findByIdAndUpdate({ _id: userId },{location,update}, {new: true} ,(err, user) => {
     // if the user is different from null
     if (err) {return next(err);
     } else {

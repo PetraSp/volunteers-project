@@ -1,4 +1,4 @@
-	html, body {
+html, body {
 	background: #e6cae0;
 	font-family: "San Francisco";
 	font-size: 16px;
@@ -11,10 +11,15 @@
 	width: 100%;
 }
 
-/*HOME PAGE*/
+.main {
+	padding-top: 50px;
+}
 
-.sidenav {
+/*H O M E  P A G E*/
+
+.navbar {
 	background-color: #f9fde4;
+	color: #337ab7;
 	height: 65px;
 	position: fixed;
 	top: 0;
@@ -23,18 +28,23 @@
 	z-index: 99999;
 }
 
-.sidenav ul {
+.navbar ul {
 	float: right;
   margin-top: 20px;
 /*	margin-right: 60px;*/
 }
 
-.sidenav li {
+.navbar li {
 	float: left;
   list-style: none;
   margin: 0 50px 0 0;
   padding: 10px 0;
 	width: auto;
+}
+
+.navbar-brand {
+	margin: 10px 50px 0 0;
+	padding: 20px 20px;
 }
 
 .h1-index {
@@ -64,8 +74,8 @@
 
 #content {
 	background-image: url("../images/feathers.png");
-	height: 330px;
-	margin: 120px auto;
+	height: 380px;
+	margin: 40px auto;
 	max-width: 1400px;
 	min-width: 240px;
 	position: relative;
@@ -73,9 +83,9 @@
 }
 
 .hands-picture {
-position: absolute;
-right: 120px;
-top: 130px;
+	position: absolute;
+	right: 120px;
+	top: 180px;
 }
 
 .hands-picture img {
@@ -89,11 +99,14 @@ top: 130px;
 }
 
 footer {
-background-color: #f9fde4;
-height: 65px;
-position: fixed;
-bottom: 0;
-width: 100%;
+	background-color: #f9fde4;
+	color: #337ab7;
+	height: 65px;
+	overflow: hidden;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 99999;
 }
 
 .footer-text {
@@ -101,32 +114,160 @@ width: 100%;
 }
 
 
+/* W H E R E  W E  W O R K*/
 
-
-#file{
- width: 300px;
- height: 300px;
+.listing {
+	color: #f9fde4;
+	font-size: 24px;
+	margin-top: 40px;
+	margin-left: 80px;
 }
+
+#map {
+	height: 360px;
+	margin-top: 20px;
+	margin-left: 80px;
+	width: 500px;
+}
+
+#info-box {
+	float: right;
+  margin: 0 -25px 0 0 ;
+	width : 400px;
+	margin-top: -405px;
+}
+
+
+#nursingHome {
+	/*float: right;
+  margin: 0 -25px 0 0 ;
+	width : 400px;
+	margin-top: -405px;*/
+/*	text-align: justify;
+
+	width: 400px;*/
+/*	height: 500px;
+	width: 100%;*/
+}
+
+
+/* L O G I N and S I G N U P*/
+
+.panel {
+	margin-top: 70px;
+}
+
+.login {
+	width: 380px;
+	margin: 0 auto;
+}
+
+.signup {
+	width: 380px;
+	margin: 0 auto;
+}
+
+/* S E C R E T  V I E W  */
+
+.welcome-msg {
+	color: #f9fde4;
+	margin-top: 60px;
+	margin-left: 50px;
+}
+
+.where-we-work {
+	font-size: 20px;
+	margin-top: 40px;
+	margin-left: 50px;
+}
+
+.edit-your-profile {
+	font-size: 20px;
+	margin-left: 50px;
+	margin-top: 20px;
+}
+
+.user-info-title {
+	font-weight: bold;
+	font-size: 20px;
+	margin-top: 40px;
+	margin-left: 50px;
+}
+
+.user-info {
+	font-size: 18px;
+	margin-left: 50px;
+}
+
+.btn {
+	background: #f9fde4;
+	border: 1px solid;
+	border-color: #4B2D73;
+	border-radius: 5px;
+	margin-left: 50px;
+	margin-top: 30px;
+	padding: 10px;
+	width: 120px;
+}
+
+/* E D I T  Y O U R  P R O F I L E */
+
+.form {
+	margin-left: 30px;
+	margin-bottom: 100px;
+}
+
+.form__title {
+	color: #337ab7;
+	font-weight: bold;
+	margin-top: 40px;
+}
+
 
 
 .form .form--edit-user {
 	margin: 0 auto;
 }
 
-.listing {
-	color: #f9fde4
+
+
+.label {
+  width: 120px;
+  height: 120px;
+  border: 2px dashed grey;
+  border-radius: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  padding: 1.2em;
+  transition: 300ms border ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.label i {
+  display: block;
+  font-size: 42px;
+  padding-bottom: 16px;
+}
+
+.label i,
+.label .title {
+  color: grey;
+  transition: 200ms color;
+}
+
+.label:hover {
+  border: 2px solid black;
+}
+
+.label:hover i,
+.label:hover .title {
+  color: black;
 }
 
 
-
-
-
-
-.login {
-	width: 380px;
-	padding-top: 50px;
-	margin: 0 auto;
-}
 
 .background-img {
 	position: absolute;
@@ -146,13 +287,11 @@ width: 100%;
 }
 
 
-.signup1 {
-	width: 380px;
-	padding-top: 50px;
-	margin: 0 auto;
+
+#file{
+ width: 300px;
+ height: 300px;
 }
-
-
 .upload-photo {
 	margin-top: 1.5em;
 	margin-bottom: 1.5em;
@@ -168,30 +307,6 @@ width: 100%;
 }
 
 
-
-
-
-.secret-div {
-	height: 100%;
-	width: 400px;
-	background: url('../images/elderly.jpg');
-	opacity: 0.7;
-}
-
-
-.btn {
-	border: solid;
-	border-radius: 5px;
-	border-color: #4B2D73;
-	height: 30px;
-	width: 200px;
-	text-align: center;
-	padding-bottom: 25px;
-	margin-top: 10px;
-}
-
-
-
 .hidden {
 	visibility: none;
 }
@@ -201,37 +316,9 @@ width: 100%;
 	font-size: 20px;
 }
 
-.where-we-work {
-	margin-top: 40px;
-	font-size: 20px;
-}
 
-.edit-your-profile {
-	margin-top: 20px;
-	font-size: 20px;
-}
 
-#map {
-	height: 400px;
-	width: 600px;
-}
-#info-box {
-	float: right;
-  margin: 0 -25px 0 0 ;
-	width : 400px;
-	margin-top: -405px;
-}
-#nursingHome {
-	/*float: right;
-  margin: 0 -25px 0 0 ;
-	width : 400px;
-	margin-top: -405px;*/
-	text-align: justify;
 
-	width: 400px;
-/*	height: 500px;
-	width: 100%;*/
-}
 
 
 
@@ -308,9 +395,7 @@ font-weight: normal;
 
 .form__input--checkbox + .form__label { display: inline-block; }
 
-.form__title {
-	margin-top: 0;
-}
+
 
 
 .pic-box {
@@ -333,37 +418,7 @@ font-weight: normal;
   user-select: none;
 }*/
 
-.label {
-  width: 120px;
-  height: 120px;
-  border: 2px dashed grey;
-  border-radius: 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  display: block;
-  padding: 1.2em;
-  transition: 300ms border ease;
-  cursor: pointer;
-  text-align: center;
-}
-.label i {
-  display: block;
-  font-size: 42px;
-  padding-bottom: 16px;
-}
-.label i,
-.label .title {
-  color: grey;
-  transition: 200ms color;
-}
-.label:hover {
-  border: 2px solid black;
-}
-.label:hover i,
-.label:hover .title {
-  color: black;
-}
+
 /*  END INPUT FILE */
 
 

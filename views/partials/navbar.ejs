@@ -1,9 +1,10 @@
 <header>
   <nav>
-    <div class="sidenav">
+    <div class="navbar">
+    <a class="navbar-brand" href="/">BRINGING GENERATIONS TOGETHER</a>
       <ul>
          <% if (isUserLoggedIn) { %>
-          <p class="navbar-text">Signed in as <%= currentUser.user.username %></p>
+          <li>Signed in as <%= currentUser.user.username %></li>
           <li><a href="/where-we-work">Where we work</a></li>
           <li><a href="/editProfileUser">Edit your profile</a></li>
           <li><a href="/logout">Logout</a></li>
