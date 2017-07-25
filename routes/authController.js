@@ -38,33 +38,13 @@ router.post("/signup", (req, res, next) => {
     var hashPass = bcrypt.hashSync(password, salt);
 
     // any values you need from form need to be added here
+    // just the values needed for the sign up
     var newUser = User({
       username : username,
       role: role,
       fullname : req.body.fullname,
       password: hashPass,
-      location: { type: "Point", coordinates: [0,0] },
-      age: req.body.age,
-      country: req.body.country,
-      phone: req.body.phone,
-      occupation: req.body.occupation,
-      bio: req.body.bio,
-      av: req.body.mon,
-      av: req.body.tue,
-      av: req.body.wed,
-      av: req.body.thu,
-      av: req.body.fri,
-      av: req.body.sat,
-      av: req.body.sun,
-      avTimes: req.body.mornings,
-      avTimes: req.body.afternoons,
-      avTimes: req.body.evenings,
-      activity: req.body.activity0,
-      activity: req.body.activity1,
-      activity: req.body.activity2,
-      activity: req.body.activity3,
-      activity: req.body.activity4,
-      activity: req.body.activity5,
+      location: { type: "Point", coordinates: [0,0] }
     });
 
     newUser.save((err) => {

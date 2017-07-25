@@ -16,58 +16,98 @@ router.get('/where-we-work', function(req, res, next) {
 });
 
 
-router.get('/editProfileUser', function(req, res, next) {
-  var user = req.user
-  var age = req.body.age
-  res.render('editProfileUser',{user});
+router.get('/editProfileUser/:id', function(req, res, next) {
+  const userId = req.params.id;
+  // var age = req.body.age
+  console.log("UserID" + userId)
+  
+  User.findById(userId, (err, user) => {
+    if (err) {return next (err);}
+    res.render('editProfileUser',{user});
+  });
 });
 
 
-router.post("/editProfileUser", (req, res, next) => {
-  // var userId = req.user
-  console.log("inside post", req.user._id)
-  var userId = req.user._id;
-
- 
-  let location = {
-    type: 'Point',
-    coordinates: [0, 0]
-  };
-
-  let update = {
+router.post("/edit/:id", (req, res, next) => {
+  var userId = req.user._id
+    let update = {
     age: req.body.age,
     country: req.body.country,
     phone: req.body.phone,
     occupation: req.body.occupation,
     bio: req.body.bio,
-    av: req.body.mon,
-    av: req.body.tue,
-    av: req.body.wed,
-    av: req.body.thu,
-    av: req.body.fri,
-    av: req.body.sat,
-    av: req.body.sun,
-    avTimes: req.body.mornings,
-    avTimes: req.body.afternoons,
-    avTimes: req.body.evenings,
-    activity: req.body.activity0,
-    activity: req.body.activity1,
-    activity: req.body.activity2,
-    activity: req.body.activity3,
-    activity: req.body.activity4,
-    activity: req.body.activity5,
-  }
+    mon: req.body.mon,
+    tue: req.body.tue,
+    wed: req.body.wed,
+    thu: req.body.thu,
+    fri: req.body.fri,
+    sat: req.body.sat,
+    sun: req.body.sun,
+    mornings: req.body.mornings,
+    afternoons: req.body.afternoons,
+    evenings: req.body.evenings,
+    // activity: req.body.activity0,
+    // activity: req.body.activity1,
+    // activity: req.body.activity2,
+    // activity: req.body.activity3,
+    // activity: req.body.activity4,
+    // activity: req.body.activity5,
+  };
 
 
-  User.findByIdAndUpdate({ _id: userId },{location,update}, {new: true} ,(err, user) => {
-    // if the user is different from null
-    if (err) {return next(err);
-    } else {
-      console.log("secret",user)
-      res.render("secret",{user})
-    }
+User.findByIdAndUpdate(userId, update, (err, user) => {
+    if (err) {return next(err); } 
+    console.log(user)
+    return res.redirect("/secret");
   });
 });
+
+
+router.post("/editnHome/:id", (req, res, next) => {
+var long;
+var lat;
+
+  if(req.body.longitude === '') {
+  long = 0
+  } else {
+    long = Number(req.body.longitude)
+  }
+
+  if(req.body.latitude === '') {
+  lat = 0 
+  } else {
+    lat = Number(req.body.latitude)
+  }
+
+  let location = {
+    type: 'Point',
+    coordinates: [long, lat]
+  };
+
+  let update = {
+    address: req.body.address,
+    location: location,
+    contact: req.body.contact,
+    phone: req.body.phone,
+    needs: req.body.needs
+  };
+
+
+User.findByIdAndUpdate(userId, update, {new: true},(err, user) => {
+    if (err) {return next(err); } 
+    console.log(user)
+    return res.redirect("/secret");
+  });
+});
+//   User.findByIdAndUpdate({ _id: userId },{location,update}, {new: true} ,(err, user) => {
+//     // if the user is different from null
+//     if (err) {return next(err);
+//     } else {
+//       console.log("secret",user)
+//       res.render("secret",{user})
+//     }
+//   });
+// });
 
 
 //to display the volunteers database
@@ -91,9 +131,13 @@ router.get('/search/:json', function (req, res, next) {
 
 
 router.get('/secret', auth.checkLoggedIn('You must be login', '/login'), function(req, res, next) {
-  var user = req.user
+  var user = req.user._id
   console.log('user', req.user);
-  res.render('secret', {user});
+   User.findById(user, (err, user) => {
+    if (err) {return next (err);}
+     res.render('secret', {user});
+  });
+ 
 });
 
 router.get('/admin', auth.checkLoggedIn('You must be login', '/login'), auth.checkCredentials('ADMIN'), function(req, res, next) {

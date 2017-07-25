@@ -1,32 +1,33 @@
-<!-- <% if(user.role === "user"){ %> -->
+<% if(user.role === "user"){ %>
 
-<form action="/editProfileUser" method="POST" onSubmit="return validateForm();" class='form form--edit-user'>
+<form action="/edit/<%= user._id %>" method="POST" class='form form--edit-user'>
+  
   <h4 class="form__title">Update your volunteer account</h4>
   
   <label for='age' class="form__label">
     <span>Age</span>
   </label>
-  <input type="number" id="age" name="age" class="form__input"/>
+  <input type="number" id="age" name="age" value="<%= user.age %>" class="form__input"/>
 
   <label for="country" class='form__label'>
     <span>Country</span>
   </label>
-  <input type="text" id="country" name="country" class="form__input"/>
+  <input type="text" id="country" name="country" value="<%= user.country %>" class="form__input"/>
   
   <label for='phone' class="form__label">
     <span>Phone</span>
   </label>
-  <input type="tel" id="phone" name="phone" class="form__input"/>
+  <input type="tel" id="phone" name="phone" value="<%= user.phone %>" class="form__input"/>
 
   <label for='occupation' class="form__label">
     <span>Occupation</span>
   </label>
-  <input type="text" id="occupation" name="occupation" class="form__input"/>
+  <input type="text" id="occupation" name="occupation" value="<%= user.occupation %>" class="form__input"/>
 
   <label for='bio' class="form__label">
     <span>Mini Biography</span>
   </label>
-  <textarea id='bio' class="form__textarea" name='bio'></textarea>
+  <textarea id='bio' class="form__textarea" name='bio' value="<%= user.bio %>"></textarea>
 
     <div class="column-wrapper">
       <div class="column2">
@@ -34,31 +35,31 @@
         <span>Available Days:</span>
         </label>
         <div>
-          <input type="checkbox" class="form__input form__input--checkbox" id="monday" name="mon">
+          <input type="checkbox" class="form__input form__input--checkbox" id="monday" name="mon" value="<%= user.mon %>">
           <label for='monday' class="form__label">Monday</label> 
         </div>
         <div>
-          <input type="checkbox" class="form__input form__input--checkbox" id="tuesday" name="tue">
+          <input type="checkbox" class="form__input form__input--checkbox" id="tuesday" name="tue" value="<%= user.tue %>">
           <label for='tuesday' class="form__label">Tuesday</label> 
         </div>    
         <div>
-          <input type="checkbox" class="form__input form__input--checkbox" id="wednesday" name="wed">
+          <input type="checkbox" class="form__input form__input--checkbox" id="wednesday" name="wed" value="<%= user.wed %>">
           <label for='wednesday' class="form__label">Wednesday</label>
         </div>
         <div>
-          <input type="checkbox" class="form__input form__input--checkbox" id="thursday" name="thu">
+          <input type="checkbox" class="form__input form__input--checkbox" id="thursday" name="thu" value="<%= user.thu %>">
           <label for='thursday' class="form__label">Thursday</label>
         </div>
         <div>
-          <input type="checkbox" class="form__input form__input--checkbox" id="friday" name="fri">
+          <input type="checkbox" class="form__input form__input--checkbox" id="friday" name="fri" value="<%= user.fri %>">
           <label for='friday' class="form__label">Friday</label>
         </div>
         <div>
-          <input type="checkbox" class="form__input form__input--checkbox" id="saturday" name="sat">
+          <input type="checkbox" class="form__input form__input--checkbox" id="saturday" name="sat" value="<%= user.sat %>">
           <label for='saturday' class="form__label">Saturday</label>
         </div>
         <div>
-          <input type="checkbox" class="form__input form__input--checkbox" id="sunday" name="sun">
+          <input type="checkbox" class="form__input form__input--checkbox" id="sunday" name="sun" value="<%= user.sun %>">
           <label for='sunday' class="form__label">Sunday</label>
         </div>
       </div>
@@ -68,15 +69,15 @@
         <span>Available Times:</span>
         </label>
         <div>
-          <input type="checkbox" class="form__input form__input--checkbox" id="thursday" name="mornings">
+          <input type="checkbox" class="form__input form__input--checkbox" id="thursday" name="mornings" value="<%= user.mornings %>">
           <label for='mornings' class="form__label">Mornings</label>
         </div>
         <div>
-          <input type="checkbox" class="form__input form__input--checkbox" id="friday" name="afternoons">
+          <input type="checkbox" class="form__input form__input--checkbox" id="friday" name="afternoons" value="<%= user.afternoons %>">
           <label for='afternoons' class="form__label">Afternoons</label>
         </div>
         <div>
-          <input type="checkbox" class="form__input form__input--checkbox" id="saturday" name="evenings">
+          <input type="checkbox" class="form__input form__input--checkbox" id="saturday" name="evenings" value="<%= user.evenings %>">
           <label for='evenings' class="form__label">Evenings</label>
         </div>
       </div>
@@ -138,44 +139,43 @@
     <input type="submit" value="Save">
     </form> -->
 
-<!-- <% } else { %>  
+<% } else { %>  
 
- <form action="/editProfileUser" method="POST" onSubmit="return validateForm();" class='form form--edit-user'>
+ <form action="/editNhome/<%= user._id %>" method="POST" class='form form--edit-user'>
 
   <h4 class="form__title">Find volunteers where you need help</h4>
 
   <label for='Address' class="form__label">
   <span>Address</span>
   </label>
-  <input id="address" type="text">
-  <input id="latitude" type="text" name="latitude" placeholder="Latitude" >
-  <input id="longitude" type="text" name="longitude" placeholder="Longitude">
-
+  <input id="address" type="text" name="address" />
+  <input id="latitude" type="hidden" name="latitude" value="<%= user.location.coordinates[1] %>" placeholder="Latitude"/>
+  <input id="longitude" type="hidden" name="longitude" value="<%= user.location.coordinates[0] %>" placeholder="Longitude" />
   <label for='contact' class="form__label">
     <span>Contact Person</span>
   </label>
-  <input type="text" id="contact" name="contact" class="form__input"/>
+  <input type="text" id="contact" name="contact" class="form__input" value="<%= user.contact %>"/>
 
   <label for='contact-phone' class="form__label">
     <span>Contact Person's phone number</span>
   </label>
-  <input type="tel" id="contact-phone" name="contact-phone" class="form__input"/>
+  <input type="number" id="contact-phone" name="phone" class="form__input" value="<%= user.phone %>"/>
 
   <label for='needs' class="form__label">
     <span>Areas of need</span>
   </label>
-  <textarea id='needs' class="form__textarea" name='needs'></textarea>
+  <textarea id='needs' class="form__textarea" name='needs' value="<%= user.needs %>"/></textarea>
 
-<!--   <div></div><button type="submit">Submit</button></div>
+  <div></div><button type="submit">Submit</button></div>
 </form>
 
-<% } %> --> -->
+<% } %>
 
 <!-- input tel js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.1.2/js/intlTelInput.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.1.2/js/utils.js"></script>
-    <script src="js/countrySelect.min.js"></script>
+    <script src="/js/countrySelect.min.js"></script>
     <script type="text/javascript">
       $("#phone").intlTelInput();
       $("#country").countrySelect();
@@ -185,7 +185,7 @@
       defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7vXyvsKLbTZp0OXfVs3cF_b1kG32LwXc&libraries=places">
     </script>
-    <script type="text/javascript" src="autocomplete.js"></script>
+    <script type="text/javascript" src="/autocomplete.js"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
   $("#profileImage").click(function(e) {
