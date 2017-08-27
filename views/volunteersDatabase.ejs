@@ -1,14 +1,11 @@
-<!-- <% 
+<!-- <%
 users.forEach(function(user){ %>
-  <p><%= user.username %> </p>  
+  <p><%= user.username %> </p>
   <p><%= user.fullname %> </p>
 <%})%> -->
 
-<html>
-  <head>
-    <title>The list of people with BIG hearts</title>
-  </head>
 
+<div class="volunteers-database">
     <%
     users.forEach(function(user){ %>
     <% if(user.role === "user"){ %>
@@ -20,10 +17,8 @@ users.forEach(function(user){ %>
           <p><b>Availability:</b> <%= user.availability %> </p>
           <p><b>email:</b> <%= user.email %> </p>
           <p><b>Phone:</b> <%= user.phone %> </p>
-      
+
       </div>
       <%}%>
     <%})%>
-  <body>
-</body>
-</html>
+</div>

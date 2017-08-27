@@ -1,9 +1,9 @@
 <% if(user.role === "user"){ %>
 
 <form action="/edit/<%= user._id %>" method="POST" class='form form--edit-user'>
-  
+
   <h4 class="form__title">Update your volunteer account</h4>
-  
+
   <label for='age' class="form__label">
     <span>Age</span>
   </label>
@@ -13,11 +13,11 @@
     <span>Country</span>
   </label>
   <input type="text" id="country" name="country" value="<%= user.country %>" class="form__input"/>
-  
+
   <label for='phone' class="form__label">
     <span>Phone</span>
   </label>
-  <input type="tel" id="phone" name="phone" value="<%= user.phone %>" class="form__input"/>
+  <input type="number" id="phone" name="phone" value="<%= user.phone %>" class="form__input"/>
 
   <label for='occupation' class="form__label">
     <span>Occupation</span>
@@ -36,12 +36,12 @@
         </label>
         <div>
           <input type="checkbox" class="form__input form__input--checkbox" id="monday" name="mon" value="<%= user.mon %>">
-          <label for='monday' class="form__label">Monday</label> 
+          <label for='monday' class="form__label">Monday</label>
         </div>
         <div>
           <input type="checkbox" class="form__input form__input--checkbox" id="tuesday" name="tue" value="<%= user.tue %>">
-          <label for='tuesday' class="form__label">Tuesday</label> 
-        </div>    
+          <label for='tuesday' class="form__label">Tuesday</label>
+        </div>
         <div>
           <input type="checkbox" class="form__input form__input--checkbox" id="wednesday" name="wed" value="<%= user.wed %>">
           <label for='wednesday' class="form__label">Wednesday</label>
@@ -82,10 +82,10 @@
         </div>
       </div>
     </div>
-   
+
 
   <!-- <section class="upload-photo"> -->
-    
+
   <!-- </section> -->
 
   <!-- <div class="form-group">
@@ -95,20 +95,20 @@
       <input type="file">
     </label>
   </div> -->
-  
+
 
 <!-- <button class="button" type="submit">Volunteer!</button> -->
-<br> 
+<br>
   <section class="form-group checkbox-group">
     <p><strong>I am willing to:</strong></p>
     <div>
       <input type="checkbox" class="form__input form__input--checkbox" id="activity-0" name="activity0">
-      <label for='activity-0' class="form__label">Help with Shopping</label> 
+      <label for='activity-0' class="form__label">Help with Shopping</label>
     </div>
     <div>
       <input type="checkbox" class="form__input form__input--checkbox" id="activity-1" name="activity1">
-      <label for='activity-1' class="form__label">Entertain: I can sing, dance, and make you laugh!</label> 
-    </div>    
+      <label for='activity-1' class="form__label">Entertain: I can sing, dance, and make you laugh!</label>
+    </div>
     <div>
       <input type="checkbox" class="form__input form__input--checkbox" id="activity-2" name="activity2">
       <label for='activity-2' class="form__label">Reading</label>
@@ -129,7 +129,7 @@
   <!-- <p class="agree">By clicking the button below, you agree to the Elder Helpers</p> -->
 
   <button class="button" type="submit">Volunteer!</button>
-  
+
 </form>
 
 <!-- <div class="upload-photo">Upload your photo</div>
@@ -139,9 +139,9 @@
     <input type="submit" value="Save">
     </form> -->
 
-<% } else { %>  
+<% } else { %>
 
- <form action="/editNhome/<%= user._id %>" method="POST" class='form form--edit-user'>
+ <form action="/editnHome/<%= user._id %>" method="POST" class='form form--edit-user'>
 
   <h4 class="form__title">Find volunteers where you need help</h4>
 
@@ -151,6 +151,7 @@
   <input id="address" type="text" name="address" />
   <input id="latitude" type="hidden" name="latitude" value="<%= user.location.coordinates[1] %>" placeholder="Latitude"/>
   <input id="longitude" type="hidden" name="longitude" value="<%= user.location.coordinates[0] %>" placeholder="Longitude" />
+
   <label for='contact' class="form__label">
     <span>Contact Person</span>
   </label>
@@ -159,7 +160,7 @@
   <label for='contact-phone' class="form__label">
     <span>Contact Person's phone number</span>
   </label>
-  <input type="number" id="contact-phone" name="phone" class="form__input" value="<%= user.phone %>"/>
+  <input type="tel" id="contact-phone" name="phone" class="form__input" value="<%= user.phone %>"/>
 
   <label for='needs' class="form__label">
     <span>Areas of need</span>
@@ -192,4 +193,3 @@
     $("#imageUpload").click();
 });
 </script>
-

@@ -20,7 +20,7 @@ router.get('/editProfileUser/:id', function(req, res, next) {
   const userId = req.params.id;
   // var age = req.body.age
   console.log("UserID" + userId)
-  
+
   User.findById(userId, (err, user) => {
     if (err) {return next (err);}
     res.render('editProfileUser',{user});
@@ -28,7 +28,7 @@ router.get('/editProfileUser/:id', function(req, res, next) {
 });
 
 
-router.post("/edit/:id", (req, res, next) => {
+router.post('/edit/:id', (req, res, next) => {
   var userId = req.user._id
     let update = {
     age: req.body.age,
@@ -56,7 +56,7 @@ router.post("/edit/:id", (req, res, next) => {
 
 
 User.findByIdAndUpdate(userId, update, (err, user) => {
-    if (err) {return next(err); } 
+    if (err) {return next(err); }
     console.log(user)
     return res.redirect("/secret");
   });
@@ -64,6 +64,7 @@ User.findByIdAndUpdate(userId, update, (err, user) => {
 
 
 router.post("/editnHome/:id", (req, res, next) => {
+var userId = req.user._id;
 var long;
 var lat;
 
@@ -74,7 +75,7 @@ var lat;
   }
 
   if(req.body.latitude === '') {
-  lat = 0 
+  lat = 0
   } else {
     lat = Number(req.body.latitude)
   }
@@ -93,12 +94,14 @@ var lat;
   };
 
 
-User.findByIdAndUpdate(userId, update, {new: true},(err, user) => {
-    if (err) {return next(err); } 
+User.findByIdAndUpdate(userId, update, (err, user) => {
+    if (err) {return next(err); }
     console.log(user)
     return res.redirect("/secret");
   });
 });
+
+
 //   User.findByIdAndUpdate({ _id: userId },{location,update}, {new: true} ,(err, user) => {
 //     // if the user is different from null
 //     if (err) {return next(err);
@@ -137,7 +140,7 @@ router.get('/secret', auth.checkLoggedIn('You must be login', '/login'), functio
     if (err) {return next (err);}
      res.render('secret', {user});
   });
- 
+
 });
 
 router.get('/admin', auth.checkLoggedIn('You must be login', '/login'), auth.checkCredentials('ADMIN'), function(req, res, next) {

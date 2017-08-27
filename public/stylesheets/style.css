@@ -73,7 +73,7 @@ html, body {
 }
 
 #content {
-	background-image: url("../images/feathers.png");
+	/*background-image: url("../images/feathers.png");*/
 	height: 380px;
 	margin: 40px auto;
 	max-width: 1400px;
@@ -101,7 +101,7 @@ html, body {
 footer {
 	background-color: #f9fde4;
 	color: #337ab7;
-	height: 65px;
+	height: 50px;
 	overflow: hidden;
 	position: fixed;
 	bottom: 0;
@@ -207,7 +207,12 @@ footer {
 	margin-left: 50px;
 	margin-top: 30px;
 	padding: 10px;
-	width: 120px;
+	width: 180px;
+	display: inline-block;
+}
+
+.see-volunteers {
+	margin-left: 50px;
 }
 
 /* E D I T  Y O U R  P R O F I L E */
@@ -409,6 +414,10 @@ font-weight: normal;
 	position: relative;
 	height: 200px;
 	border-bottom: solid 2px;
+}
+
+.volunteers-database {
+	margin-left: 30px;
 }
 /* INPUT FILE */
 /*input[type=file] {
@@ -1325,5 +1334,3 @@ font-weight: normal;
 .country-select .ch{
 	background-position:-208px -143px
 }
-
-
